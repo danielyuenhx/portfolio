@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from "react";
 import Header from "./components/Header.js"
 import Dropdown from "./components/Dropdown.js"
+import Animation from "./components/Animation.js"
 import About from "./components/About.js"
 import Skills from "./components/Skills.js"
 import Footer from "./components/Footer.js"
@@ -11,7 +12,6 @@ function App() {
 
   const toggle = () => {
     setIsOpen(!isOpen);
-    console.log('test')
   };
 
   useEffect(() => {
@@ -33,6 +33,7 @@ function App() {
     <>
       <Header toggle={toggle}/>
       <Dropdown isOpen={isOpen} toggle={toggle}/>
+      <Animation />
       <About />
       <Skills />
       <Footer />
