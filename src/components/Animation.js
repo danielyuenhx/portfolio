@@ -5,11 +5,24 @@ import { useSpring, a } from '@react-spring/three'
 
 softShadows();
 
-// var spinSpeed = 0.5;
-// var time = 15;
+/**
+ * Creates a buffer geometry.
+ * 
+ * @param {String} geometry Geometry type, eg. box, sphere, icosahedron (https://threejs.org/docs/)
+ * @param {Number} spinSpeed Initial geometry spinning speed
+ * @param {Number} time Time to reduce speed to 0.0075
+ * @param {Array[Number]} pos Position arguments
+ * @param {Array[Number]} args Geometry arguments, eg. width, height, radius
+ * @param {String} color Geometry colour
+ * @param {Number} speed Geometry wobble speed
+ * @param {Number} factor Geometry wobble factor
+ * @returns a.mesh
+ */
+const Geometry = ({geometry, spinSpeed, time, pos, args, color, speed, factor}) => {
+    const GeometryTag = geometry + 'BufferGeometry';
 
-const Box = ({spinSpeed, time, pos, args, color, speed, factor}) => {
     const mesh = useRef(null);
+    // updates rotation, decreases slowly to 0.0075
     useFrame(() => {
         if (spinSpeed > 0.0075) {
             spinSpeed -= Math.pow(spinSpeed,2)/time;
@@ -18,15 +31,16 @@ const Box = ({spinSpeed, time, pos, args, color, speed, factor}) => {
         mesh.current.rotation.x = mesh.current.rotation.y += spinSpeed
     })
 
-    // scaling on click
+    // scaling function
     const [zoom, setZoom] = useState(false);
     const props = useSpring({
         scale: zoom ? [1.5, 1.5, 1.5] : [1, 1, 1]
     })
 
+    // scales on pointer enter and returns to normal on leave
     return (
         <a.mesh onPointerEnter={() => setZoom(!zoom)} onPointerLeave={() => setZoom(!zoom)} scale={props.scale} castShadow position={pos} ref={mesh}>
-            <boxBufferGeometry attach="geometry" args={args} />
+            <GeometryTag attach="geometry" args={args} />
             <MeshWobbleMaterial attach="material" color={color} speed={speed} factor={factor} />
         </a.mesh>
     )
@@ -72,29 +86,32 @@ function Animation() {
                     </mesh> */}
 
 
-                    <Box 
+                    <Geometry
+                        geometry={'box'}
                         spinSpeed={0.1}
                         time={1}
                         pos={[0,0.5,0]} 
-                        args={[3,2,1]} 
+                        args={[1,2,3]} 
                         color="lightblue"
                         speed={1}
                         factor={0.6} />
-                    <Box 
+                    <Geometry 
+                        geometry={'icosahedron'}
                         spinSpeed={0.1}
                         time={1}
                         pos={[-2,1,-5]} 
-                        args={[1,1,1]} 
+                        args={[0.75,0,1]} 
                         color="pink"
-                        speed={3}
-                        factor={2} />
-                    <Box 
+                        speed={4}
+                        factor={1.5} />
+                    <Geometry 
+                        geometry={'torus'}
                         spinSpeed={0.1}
                         time={1}
                         pos={[5,1,-2]} 
-                        args={[1,1,1]} 
-                        color="pink"
-                        speed={4}
+                        args={[1, 0.3, 16, 100]} 
+                        color="lightpurple"
+                        speed={3}
                         factor={1.5} />
                 </Canvas>
             </div>

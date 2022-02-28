@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import "./dropdown.css"
+import "./style.css"
 
 function Dropdown({isOpen, toggle}) {
     return (

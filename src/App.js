@@ -35,7 +35,7 @@ function App() {
       <Dropdown isOpen={isOpen} toggle={toggle}/>
       <Animation />
       <About />
-      <Skills />
+      {/* <Skills /> */}
       <Footer />
     </>
   );
