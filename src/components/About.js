@@ -11,7 +11,7 @@ function About() {
             <div className='ml-[5%] md:ml-[10%] lg:ml-[30%] z-10'>
                 <h1 className='font-black text-6xl py-3'>Daniel Yuen</h1>
                 <p>Software Engineer / Web Developer</p>
-                <p>Based in Malaysia</p>
+                <p>Based in Malaysia.</p>
             </div>
         </div>
     )
