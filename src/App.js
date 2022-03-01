@@ -1,7 +1,8 @@
-import React, {useState, useEffect} from "react";
+import React, {useRef, useState, useEffect, createRef} from "react";
 import Header from "./components/Header.js"
 import Dropdown from "./components/Dropdown.js"
 import Animation from "./components/Animation.js"
+import Home from "./components/Home.js"
 import About from "./components/About.js"
 import Skills from "./components/Skills.js"
 import Footer from "./components/Footer.js"
@@ -10,6 +11,7 @@ import './App.css';
 function App() {
   const [isOpen, setIsOpen] = useState(false);
 
+  // dropdown onclick
   const toggle = () => {
     setIsOpen(!isOpen);
   };
@@ -29,14 +31,22 @@ function App() {
     }
   });
 
+  const scrollArea = useRef()
+  const onScroll = e => (scrollArea.current = e.target.scrollTop)
+  useEffect(() => void onScroll({ target: scrollArea.current }), [])
+
   return (
     <>
       <Header toggle={toggle}/>
       <Dropdown isOpen={isOpen} toggle={toggle}/>
       <Animation />
+      <Home />
       <About />
-      {/* <Skills /> */}
+      <Skills />
       <Footer />
+      <div ref={scrollArea} onScroll={onScroll}>
+        <div style={{ height: '${state.pages * 100}vh' }} />
+      </div>
     </>
   );
 }

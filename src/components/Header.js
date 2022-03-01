@@ -1,5 +1,6 @@
 import React from 'react';
-import { HashLink as Link } from 'react-router-hash-link';
+import { Link, animateScroll as scroll } from "react-scroll";
+// import { HashLink as Link } from 'react-router-hash-link';
 
 function Header({ toggle }) {
   return (
@@ -16,12 +17,18 @@ function Header({ toggle }) {
       <div className="mr-8 md:block hidden">
         <ul className="flex text-base pr-8">
           {[
-            ['Home', '/#home'],
-            ['About', '/#about'],
-            ['Skills', '/#skills'],
-            ['Projects', '/#projects'],
+            ['Home', 'home'],
+            ['About', 'about'],
+            ['Skills', 'skills'],
+            ['Projects', 'projects'],
           ].map(([title, url]) => (
-            <li><Link smooth to={url} className="px-4 py-2 rounded-full ml-4 text-black transition ease duration-300 active hover:bg-black hover:text-white">{title}</Link></li>
+            <li><Link
+              activeClass="active"
+              smooth={true}
+              offset={0}
+              duration={1000} 
+              to={url} 
+              className="px-4 py-2 rounded-full ml-4 text-black transition ease duration-300 active hover:bg-black hover:text-white hover:cursor-pointer">{title}</Link></li>
           ))}
         </ul>
       </div>
