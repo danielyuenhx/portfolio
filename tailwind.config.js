@@ -7,6 +7,11 @@ module.exports = {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        'title': 'Montserrat, Helvetica, Arial, sans-serif',
+        'header': 'Trebuchet MS, Lucida Sans Unicode, Lucida Grande, Lucida Sans, Arial, Arial, sans-serif',
+        'logo': 'Century Gothic, CenturyGothic, Geneva, AppleGothic, sans-serif;',
+      },
       animation: {
         'fade-in': '1s fadeIn',
       },

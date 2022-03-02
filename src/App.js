@@ -2,6 +2,7 @@ import React, {useRef, useState, useEffect, createRef} from "react";
 import Header from "./components/Header.js"
 import Dropdown from "./components/Dropdown.js"
 import Animation from "./components/Animation.js"
+import HomeAnimation from "./components/HomeAnimation.js"
 import Home from "./components/Home.js"
 import About from "./components/About.js"
 import Skills from "./components/Skills.js"
@@ -40,8 +41,9 @@ function App() {
       <Header toggle={toggle}/>
       <Dropdown isOpen={isOpen} toggle={toggle}/>
       <Animation />
+      <HomeAnimation />
       <Home />
-      <About />
+      {/* <About /> */}
       <Skills />
       <Footer />
       <div ref={scrollArea} onScroll={onScroll}>
