@@ -49,7 +49,7 @@ const Geometry = ({geometry, spinSpeed, time, pos, args, color, speed, factor}) 
 function Animation() {
     return (
         <>
-            <div className='h-screen w-[500px] mr-[0%] lg:mr-[12%] z-1 absolute right-0'>
+            <div className='h-screen w-[600px] mr-[0%] lg:mr-[10%] z-1 absolute right-0'>
                 <Canvas shadows colorManagement camera={{position: [-5, 0, 10], fov: 50}}>
                     {/* floodlight */}
                     <ambientLight intensity={0.3} />

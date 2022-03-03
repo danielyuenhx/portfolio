@@ -1,12 +1,5 @@
 import React, {useRef, useState, useEffect} from "react";
-import Header from "./components/Header.js"
-import Dropdown from "./components/Dropdown.js"
-import Animation from "./components/Animation.js"
-import HomeAnimation from "./components/HomeAnimation.js"
-import Home from "./components/Home.js"
-import About from "./components/About.js"
-import Skills from "./components/Skills.js"
-import Footer from "./components/Footer.js"
+import { Header, Dropdown, HomeAnimation, Home, About, Skills, Footer } from "./components/Components.js"
 import './App.css';
 import useWindowSize from "./hooks/useWindowSize.js";
 
@@ -85,7 +78,6 @@ function App() {
       <div ref={app} className="fixed top-0 left-0 h-full w-full overflow-hidden">
         <div ref={scrollContainer} className="scroll">
           <Dropdown isOpen={isOpen} toggle={toggle}/>
-          {/* <Animation /> */}
           <HomeAnimation />
           <Home />
           {/* <About /> */}
