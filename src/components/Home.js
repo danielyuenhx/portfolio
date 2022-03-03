@@ -11,10 +11,10 @@ function About() {
     }, []);
 
     return (
-        <div id="home" className="h-screen md:w-1/2 flex flex-col justify-center items-left">
+        <div id="home" className=" h-screen md:w-1/2 flex flex-col justify-center items-left">
             <div className='mt-12 ml-[5%] md:ml-[10%] lg:ml-[30%] z-10 text-left'>
                 <p className='text-2xl font-title'>Hello! I'm</p>
-                <h1 className='name font-bold text-7xl pb-3 font-title transition-all ease-in-out duration-300'>Daniel Yuen</h1>
+                <h1 className='name font-bold text-7xl pb-3 font-title transition-all ease-in-out duration-300'><div>Daniel Yuen</div></h1>
                 {/* <p className='font-mono inline-block'>I'm a {' '}
                     <Typical
                         loop={Infinity}

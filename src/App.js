@@ -1,5 +1,5 @@
 import React, {useRef, useState, useEffect} from "react";
-import { Header, Dropdown, HomeAnimation, Home, About, Skills, Footer } from "./components/Components.js"
+import { Header, Dropdown, HomeAnimation, Home, About, Skills, Projects, Footer } from "./components/Components.js"
 import './App.css';
 import useWindowSize from "./hooks/useWindowSize.js";
 
@@ -82,6 +82,7 @@ function App() {
           <Home />
           {/* <About /> */}
           <Skills />
+          <Projects />
           <Footer />
         </div>
       </div>

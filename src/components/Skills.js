@@ -1,8 +1,9 @@
 import React from 'react'
 
 function Skills() {
-    return (
-        <div className="h-screen flex flex-col justify-center items-center font-mono bg-slate-500">
+    return ( 
+        // style={{backgroundColor: '#FAFFF5'}}
+        <div className="h-screen flex flex-col justify-center items-center font-mono">
             <h1 className='font-black'>Skills</h1>
             <div>
                 Programming Languages

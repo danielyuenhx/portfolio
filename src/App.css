@@ -3,7 +3,8 @@
 }
 body {
   height: 100vh;
-  background-color: #fff5f5;
+  /* background-color: #fff5f5; */
+  color: #3f3d3d;
 }
 
 .App {
