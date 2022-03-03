@@ -1,4 +1,4 @@
-import React, {useRef, useState, useEffect, createRef} from "react";
+import React, {useRef, useState, useEffect} from "react";
 import Header from "./components/Header.js"
 import Dropdown from "./components/Dropdown.js"
 import Animation from "./components/Animation.js"
@@ -8,15 +8,17 @@ import About from "./components/About.js"
 import Skills from "./components/Skills.js"
 import Footer from "./components/Footer.js"
 import './App.css';
+import useWindowSize from "./hooks/useWindowSize.js";
 
 function App() {
+  // DROPDOWN
   const [isOpen, setIsOpen] = useState(false);
-
   // dropdown onclick
   const toggle = () => {
     setIsOpen(!isOpen);
   };
 
+  // hook that will execute functions on page load (or can specify other conditions)
   useEffect(() => {
     const hideDropdown =  () => {
       // medium size for tailwind
@@ -26,28 +28,70 @@ function App() {
     }
     // listen for resize events
     window.addEventListener('resize', hideDropdown);
-
     return () => {
       window.removeEventListener('resize', hideDropdown);
     }
   });
 
-  const scrollArea = useRef()
-  const onScroll = e => (scrollArea.current = e.target.scrollTop)
-  useEffect(() => void onScroll({ target: scrollArea.current }), [])
+  // SMOOTH SCROLLING
+  const size = useWindowSize();
+  const app = useRef();
+  const scrollContainer = useRef();
+
+  const skewConfig = {
+    ease: 0.1,
+    current: 0,
+    previous: 0,
+    rounded: 0,
+  }
+
+  // only run once component has mounted (basically onload) 
+  useEffect(() => {
+    document.body.style.height = `${scrollContainer.current.getBoundingClientRect().height}px`
+  }, [size.height]); // only re-run if size.height changes
+
+  useEffect(() => {
+    requestAnimationFrame(() => skewScrolling())
+  }, [])
+
+  const skewScrolling = () => {
+    // calculations from https://github.com/wrongakram/react-smooth-skew-scrolling
+    skewConfig.current = window.scrollY;
+    skewConfig.previous += (skewConfig.current-skewConfig.previous) * skewConfig.ease;
+    skewConfig.rounded = Math.round(skewConfig.previous*100)/100;
+
+    const difference = skewConfig.current - skewConfig.rounded;
+    const acceleration = difference/size.width;
+    const velocity = +acceleration;
+    const skew = velocity * 7.5;
+
+    scrollContainer.current.style.transform = `translateY(-${skewConfig.rounded}px) skewY(${skew}deg)`;
+
+    /**
+     * tells browser want to perform animation and request browser call as a function to
+     * update before next repaint
+     * when scrolling, store info but does not finalise because still scrolling
+     * need loop to access scroll even when stop scrolling to continue gathering data
+     * */
+    requestAnimationFrame(() => skewScrolling());
+  }
+
+
+
 
   return (
     <>
       <Header toggle={toggle}/>
-      <Dropdown isOpen={isOpen} toggle={toggle}/>
-      <Animation />
-      <HomeAnimation />
-      <Home />
-      {/* <About /> */}
-      <Skills />
-      <Footer />
-      <div ref={scrollArea} onScroll={onScroll}>
-        <div style={{ height: '${state.pages * 100}vh' }} />
+      <div ref={app} className="fixed top-0 left-0 h-full w-full overflow-hidden">
+        <div ref={scrollContainer} className="scroll">
+          <Dropdown isOpen={isOpen} toggle={toggle}/>
+          {/* <Animation /> */}
+          <HomeAnimation />
+          <Home />
+          {/* <About /> */}
+          {/* <Skills /> */}
+          <Footer />
+        </div>
       </div>
     </>
   );

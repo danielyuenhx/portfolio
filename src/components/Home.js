@@ -8,9 +8,9 @@ function About() {
     }, []);
 
     return (
-        <div id="home" className="h-screen md:w-1/2 flex flex-col justify-center items-left font-mono">
-            <div className='ml-[5%] md:ml-[10%] lg:ml-[35%] z-10'>
-                <h1 className='text-2xl font-mono'>Hello! I'm</h1>
+        <div id="home" className="h-screen md:w-1/2 flex flex-col justify-center items-left">
+            <div className='ml-[5%] md:ml-[10%] lg:ml-[35%] z-10 text-left'>
+                <p className='text-2xl font-title'>Hello! I'm</p>
                 <h1 className='font-bold text-7xl pb-3 font-title'>Daniel Yuen</h1>
                 {/* <p className='font-mono inline-block'>I'm a {' '}
                     <Typical
