@@ -44,3 +44,20 @@
 .fade-in-about {
     animation: 2.5s fadeIn;
 }
+
+.link::before {
+  content: "";
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 0;
+  height: 2px;
+  background-color: black;
+  transition: width 0.2s ease-out;
+}
+
+.link:hover::before {
+  width: 100%;
+  left: 0;
+  right: auto;
+}

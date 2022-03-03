@@ -1,10 +1,10 @@
 import React from 'react';
 import { Link } from "react-scroll";
-// import { HashLink as Link } from 'react-router-hash-link';
+import "./style.css"
 
 function Header({ toggle }) {
   return (
-    <nav className="z-50 flex justify-between items-center fixed w-full h-16 top-0 left-0 text-lg font-header text-black bg-gray-100 bg-opacity-0">
+    <nav className="z-50 flex justify-between items-center fixed w-full h-16 top-0 left-0 text-lg font-header text-black bg-gray-100 md:bg-opacity-0">
     {/* <nav className="z-50 flex justify-between items-center fixed w-full h-16 top-0 left-0 shadow-sm text-lg font-header text-black bg-gray-100 bg-opacity-75"> */}
       <Link 
         activeClass="active"
@@ -33,8 +33,12 @@ function Header({ toggle }) {
               smooth={true}
               offset={0}
               duration={1000} 
-              to={url} 
-              className="px-4 py-2 uppercase tracking-widest rounded-full ml-4 transition ease duration-300 active hover:bg-black hover:text-white hover:cursor-pointer">{title}</Link></li>
+              to={url}>
+                <p 
+              className='link px-4 py-3 inline-block relative uppercase tracking-widest ml-5 hover:cursor-pointer'>{title}</p>
+                </Link></li>
+                // link px-4 py-2 uppercase tracking-widest rounded-full ml-4 transition ease duration-300 active hover:cursor-pointer
+              // hover:bg-black hover:text-white
           ))}
         </ul>
       </div>

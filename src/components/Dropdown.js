@@ -18,7 +18,7 @@ function Dropdown({isOpen, toggle}) {
                     offset={0}
                     duration={1000} 
                     to={url} 
-                    className="py-1 text-black text-base transition ease duration-300 hover:bg-black hover:text-white hover:cursor-pointer">{title}</Link>
+                    className="py-1 uppercase tracking-widest transition ease duration-300 hover:bg-black hover:text-white hover:cursor-pointer">{title}</Link>
                 ))}
         </div>
         //  + (isOpen ? "opacity-100" : "opacity-0")
