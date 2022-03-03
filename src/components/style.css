@@ -55,9 +55,20 @@
   background-color: black;
   transition: width 0.2s ease-out;
 }
-
 .link:hover::before {
   width: 100%;
   left: 0;
   right: auto;
+}
+
+.name {
+  background: linear-gradient(to right, #313131 50%, #FF5858 50%, #CC2E5D);
+  background-size: 200%;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  /* -webkit-text-stroke: 2px; */
+  transition: 0.75s ease-out;
+}
+.name:hover {
+  background-position: -100%;
 }

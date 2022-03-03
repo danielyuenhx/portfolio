@@ -81,7 +81,7 @@ function App() {
           <HomeAnimation />
           <Home />
           {/* <About /> */}
-          {/* <Skills /> */}
+          <Skills />
           <Footer />
         </div>
       </div>

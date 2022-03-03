@@ -11,7 +11,7 @@ function Header({ toggle }) {
         smooth={true}
         offset={0}
         duration={1000} 
-        to="home" className='ml-4 md:ml-20 tracking-wide font-bold flex items-center hover:cursor-pointer'>
+        to="home" className='logo ml-2 py-2 px-2 hover:animate-logo-shake md:ml-20 tracking-wide font-bold flex items-center hover:cursor-pointer'>
         {/* <svg className="w-6 h-6 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" /></svg> */}
         <p className="text-xl uppercase font-bold font-mono tracking-wider">Daniel Yuen</p>
       </Link>
