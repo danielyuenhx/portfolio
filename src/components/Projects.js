@@ -3,9 +3,9 @@ import github from '../images/github.png'
 
 function Projects() {
     return (
-        <div className='h-screen flex-col justify-center items-center text-center font-mono'>
-            <h1 className='font-bold text-6xl pb-20'>Projects</h1>
-            <div className='flex justify-around'>
+        <div className='h-screen flex-col justify-center items-center text-center text-5xl font-title tracking-tight'>
+            <h1 className='text-6xl pb-20'>Projects</h1>
+            <div className='flex justify-center'>
                 <div className='w-5/12'>
                     <img src={github}></img>
                 </div>

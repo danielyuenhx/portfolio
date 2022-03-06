@@ -5,7 +5,7 @@ import "./style.css"
 
 function Dropdown({isOpen, toggle}) {
     return (
-        <div className={"fixed grid grid-rows-4 items-center text-center bg-gray-100 bg-opacity-0 w-full top-16 font-header z-50 " + (isOpen ? "fade-in": "fade-out")} onClick={toggle}>
+        <div className={"fixed grid grid-rows-4 items-center text-center bg-gray-100 bg-opacity-75 md:bg-opacity-0 w-full top-16 font-header z-50 " + (isOpen ? "dropdown-fade-in": "dropdown-fade-out")} onClick={toggle}>
                 {[
                     ['Home', 'home'],
                     ['About', 'about'],

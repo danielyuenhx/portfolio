@@ -1,11 +1,20 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from "react-scroll";
 import "./style.css"
 
 function Header({ toggle }) {
+  const [isHidden, setIsHidden] = useState(true);
+
+  useEffect(() => {
+    setTimeout(() => {
+      setTimeout(() => {
+        setIsHidden(false);
+      }, 3100)
+    }, 0);
+  }, []);
+  
   return (
-    <nav className="z-50 flex justify-between items-center fixed w-full h-16 top-0 left-0 text-lg font-header text-black bg-gray-100 md:bg-opacity-0">
-    {/* <nav className="z-50 flex justify-between items-center fixed w-full h-16 top-0 left-0 shadow-sm text-lg font-header text-black bg-gray-100 bg-opacity-75"> */}
+    <nav className={"z-50 select-none flex justify-between items-center fixed w-full h-16 md:h-20 top-0 left-0 text-lg font-header text-black bg-gray-100 bg-opacity-75 md:bg-opacity-0 transition " + (isHidden ? "header-fade-out": "header-fade-in")} style={{transition: '1s'}}>
       <Link 
         activeClass="active"
         smooth={true}

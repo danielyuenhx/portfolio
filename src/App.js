@@ -1,5 +1,5 @@
 import React, {useRef, useState, useEffect} from "react";
-import { Header, Dropdown, HomeAnimation, Home, About, Skills, Projects, Footer } from "./components/Components.js"
+import { Header, Dropdown, Intro, HomeAnimation, Home, About, Projects, Footer } from "./components/Components.js"
 import './App.css';
 import useWindowSize from "./hooks/useWindowSize.js";
 
@@ -69,20 +69,30 @@ function App() {
     requestAnimationFrame(() => skewScrolling());
   }
 
+  
+  // SPLASH SCREEN  
+  useEffect(()  => {
+    window.scrollTo(0, 0);
+    document.body.classList.add('overflow-hidden');
+    setTimeout(() => {
+      document.body.classList.remove('overflow-hidden');
+    }, 3300);
+  }, []);
 
 
 
   return (
     <>
       <Header toggle={toggle}/>
+      <Dropdown isOpen={isOpen} toggle={toggle}/>
       <div ref={app} className="fixed top-0 left-0 h-full w-full overflow-hidden">
         <div ref={scrollContainer} className="scroll">
-          <Dropdown isOpen={isOpen} toggle={toggle}/>
+          <Intro />
           <HomeAnimation />
           <Home />
-          {/* <About /> */}
-          <Skills />
-          <Projects />
+          <About />
+          {/* <Skills /> */}
+          {/* <Projects /> */}
           <Footer />
         </div>
       </div>

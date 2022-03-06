@@ -18,13 +18,13 @@
     }
 }
 
-.fade-in {
+.dropdown-fade-in {
     animation: 0.2s fadeIn;
     animation-fill-mode: forwards;
     visibility: hidden;
 }
 
-.fade-out {
+.dropdown-fade-out {
     animation: 0.2s fadeOut;
     animation-fill-mode: forwards;
 }
@@ -68,7 +68,7 @@
   background-clip: text;
   -webkit-text-fill-color: transparent;
   /* -webkit-text-stroke: 2px; */
-  transition: 0.75s ease-out;
+  transition: 0.5s ease;
 }
 /* .name:after  {
   position: absolute;
@@ -79,4 +79,31 @@
 .name:hover {
   /* text-shadow: 5px 3px #3f3d3d; */
   background-position: -100%;
+}
+
+/* splash screen */
+/* .intro-logo {
+  transform: translate(-50%, -50%);
+} */
+.logo.active {
+  bottom: 0;
+  opacity: 1;
+  transition: ease-in-out 0.5s;
+}
+
+.logo.fade {
+  bottom: 150px;
+  opacity: 0;
+  transition: ease-in-out 0.5s;
+}
+
+.header-fade-in {
+    animation: 2s fadeIn;
+    animation-fill-mode: forwards;
+    visibility: hidden;
+}
+
+.header-fade-out {
+    animation: 0s fadeOut;
+    animation-fill-mode: forwards;
 }

@@ -11,9 +11,9 @@ function About() {
     }, []);
 
     return (
-        <div id="home" className=" h-screen md:w-1/2 flex flex-col justify-center items-left">
+        <div id="home" className="select-none h-screen md:w-1/2 flex flex-col justify-center items-left">
             <div className='mt-12 ml-[5%] md:ml-[10%] lg:ml-[30%] z-10 text-left'>
-                <p className='text-2xl font-title'>Hello! I'm</p>
+                <p className='text-4xl font-title'>Hello! I'm</p>
                 <h1 className='name font-bold text-7xl pb-3 font-title transition-all ease-in-out duration-300'><div>Daniel Yuen</div></h1>
                 {/* <p className='font-mono inline-block'>I'm a {' '}
                     <Typical
@@ -26,7 +26,7 @@ function About() {
                         wrapper="span"
                     />
                 </p> */}
-                <p className='font-mono text-lg'>
+                <p className='font-mono text-xl'>
                     <Typewriter
                         options={{loop:true}}
                         onInit={(typewriter)=> {
@@ -35,6 +35,9 @@ function About() {
                         .pauseFor(1000)
                         .deleteAll()
                         .typeString("Web Developer")
+                        .pauseFor(1000)
+                        .deleteAll()
+                        .typeString("Frontend UI/UX Designer")
                         .pauseFor(1000)
                         .deleteAll()
                         .typeString("Student")
@@ -52,12 +55,12 @@ function About() {
                 {/* <p className='font-mono'>Based in Malaysia</p> */}
                 <div className='inline-block'>
                     <a href="https://github.com/danielyuenhx" target="_blank">
-                        <img className='w-8 h-8 my-4 mr-2 hover:animate-shake' src={github} />
+                        <img className='w-10 h-10 my-4 mr-4 hover:animate-shake' src={github} />
                     </a>
                 </div>
                 <div className='inline-block'>
                     <a href="https://www.linkedin.com/in/danielyuenhx" target="_blank">
-                        <img className='w-8 h-8 my-4 hover:animate-shake' src={linkedin} />
+                        <img className='w-10 h-10 my-4 hover:animate-shake' src={linkedin} />
                     </a>
                 </div>
             </div>
