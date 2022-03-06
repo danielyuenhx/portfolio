@@ -4,6 +4,9 @@ import './App.css';
 import useWindowSize from "./hooks/useWindowSize.js";
 
 function App() {
+  window.onbeforeunload = function () {
+    window.scrollTo(0, 0);
+  }
   // DROPDOWN
   const [isOpen, setIsOpen] = useState(false);
   // dropdown onclick
@@ -25,6 +28,26 @@ function App() {
       window.removeEventListener('resize', hideDropdown);
     }
   });
+  
+  // SPLASH SCREEN  
+  const [introHeight, setIntroHeight] = useState('h-screen');
+
+  useEffect(()  => {
+    // disallow scroll
+    document.body.classList.add('overflow-hidden');
+
+    // squash intro screen
+    setTimeout(() => {
+      setIntroHeight('h-[0px]');
+    }, 2300);
+
+    // hide intro and allow scroll
+    setTimeout(() => {
+      setIntroHeight('hidden');
+      document.body.classList.remove('overflow-hidden');
+    }, 4200);
+  }, []);
+
 
   // SMOOTH SCROLLING
   const size = useWindowSize();
@@ -41,7 +64,7 @@ function App() {
   // only run once component has mounted (basically onload) 
   useEffect(() => {
     document.body.style.height = `${scrollContainer.current.getBoundingClientRect().height}px`
-  }, [size.height]); // only re-run if size.height changes
+  }, [size.height, introHeight]); // only re-run if size.height changes
 
   useEffect(() => {
     requestAnimationFrame(() => skewScrolling())
@@ -69,17 +92,6 @@ function App() {
     requestAnimationFrame(() => skewScrolling());
   }
 
-  
-  // SPLASH SCREEN  
-  useEffect(()  => {
-    window.scrollTo(0, 0);
-    document.body.classList.add('overflow-hidden');
-    setTimeout(() => {
-      document.body.classList.remove('overflow-hidden');
-    }, 3300);
-  }, []);
-
-
 
   return (
     <>
@@ -87,7 +99,7 @@ function App() {
       <Dropdown isOpen={isOpen} toggle={toggle}/>
       <div ref={app} className="fixed top-0 left-0 h-full w-full overflow-hidden">
         <div ref={scrollContainer} className="scroll">
-          <Intro />
+          <Intro introHeight={introHeight}/>
           <HomeAnimation />
           <Home />
           <About />
