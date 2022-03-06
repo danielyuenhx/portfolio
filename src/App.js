@@ -102,7 +102,7 @@ function App() {
           <Intro introHeight={introHeight}/>
           <HomeAnimation />
           <Home />
-          <About />
+          {/* <About /> */}
           {/* <Skills /> */}
           {/* <Projects /> */}
           <Footer />

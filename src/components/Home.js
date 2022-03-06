@@ -1,6 +1,5 @@
 import React from 'react'
 import "./style.css"
-import Typical from 'react-typical'
 import github from '../images/github.png'
 import linkedin from '../images/linkedin.png'
 import Typewriter from "typewriter-effect"
