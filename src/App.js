@@ -1,5 +1,5 @@
 import React, {useRef, useState, useEffect} from "react";
-import { Header, Dropdown, Intro, HomeAnimation, Home, SkillsAnimation, About, Projects, Footer } from "./components/Components.js"
+import { Header, Dropdown, Intro, HomeAnimation, Home, Skills, SkillsAnimation, About, Projects, Footer } from "./components/Components.js"
 import './App.css';
 import useWindowSize from "./hooks/useWindowSize.js";
 
@@ -102,9 +102,9 @@ function App() {
           <Intro introHeight={introHeight}/>
           <HomeAnimation />
           <Home />
-          <SkillsAnimation />
+          {/* <SkillsAnimation /> */}
           {/* <About /> */}
-          {/* <Skills /> */}
+          <Skills />
           {/* <Projects /> */}
           <Footer />
         </div>

@@ -107,3 +107,38 @@
     animation: 0s fadeOut;
     animation-fill-mode: forwards;
 }
+
+/* MARQUEE EFFECT */
+.maindiv{
+  /* border: 2px solid black; */
+  /* These are absolutely necessary */
+  overflow: hidden;
+  width: 50px;
+  white-space: nowrap;
+}
+.marquee1 {
+  display: inline-block;
+  animation: marquee1 5s linear infinite;
+}
+.marquee2 {
+  display: inline-block;
+  animation: marquee2 5s linear infinite;
+  /* Must be half the animation duration of both divs so it stats in sync to fill void left by completed transtition of first div */
+  animation-delay: 2.5s;
+}
+@keyframes marquee1 {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+@keyframes marquee2 {
+  from {
+    transform: translateX(0%);
+  }
+  to {
+    transform: translateX(-200%);
+  }
+}
