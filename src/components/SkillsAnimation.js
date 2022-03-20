@@ -25,7 +25,7 @@ function Scene() {
 
     return (
         <>
-            <ambientLight intensity={1.25} />
+            <ambientLight intensity={1.3} />
             <mesh ref={mesh}>
                 <boxBufferGeometry attach="geometry" />
                 <meshPhongMaterial map={htmlTexture} attachArray="material" />

@@ -40,7 +40,7 @@ module.exports = {
         }
       },
       backgroundColor: {
-        cyan: "#9cdbff",
+        skills: "#FAF5F0",
       }
     },
   },

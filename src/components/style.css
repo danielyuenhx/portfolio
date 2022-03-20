@@ -68,7 +68,7 @@
   background-clip: text;
   -webkit-text-fill-color: transparent;
   /* -webkit-text-stroke: 2px; */
-  transition: 0.5s ease;
+  transition: 0.75s ease;
 }
 /* .name:after  {
   position: absolute;
