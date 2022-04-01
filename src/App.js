@@ -79,7 +79,7 @@ function App() {
     const difference = skewConfig.current - skewConfig.rounded;
     const acceleration = difference/size.width;
     const velocity = +acceleration;
-    const skew = velocity * 7.5;
+    const skew = velocity * 10;
 
     scrollContainer.current.style.transform = `translateY(-${skewConfig.rounded}px) skewY(${skew}deg)`;
 
