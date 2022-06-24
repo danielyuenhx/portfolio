@@ -3,6 +3,7 @@ import "./style.css"
 import github from '../images/github.png'
 import linkedin from '../images/linkedin.png'
 import Typewriter from "typewriter-effect"
+import { motion } from "framer-motion"
 
 function About() {
     React.useEffect(() => {
@@ -57,11 +58,24 @@ function About() {
                         <img className='w-10 h-10 my-4 mr-4 hover:animate-shake' src={github} />
                     </a>
                 </div>
-                <div className='inline-block'>
+                {/* <div className='inline-block'>
                     <a href="https://www.linkedin.com/in/danielyuenhx" target="_blank">
                         <img className='w-10 h-10 my-4 hover:animate-shake' src={linkedin} />
                     </a>
+                </div> */}
+                <motion.button
+                whileHover={{
+                    scale: 1.2,
+                    transition: { duration: 1 },
+                }}
+                whileTap={{ scale: 0.9 }}
+                >
+                <div className='inline-block'>
+                    <a href="https://www.linkedin.com/in/danielyuenhx" target="_blank">
+                        <img className='w-10 h-10 my-4' src={linkedin} />
+                    </a>
                 </div>
+                </motion.button>
             </div>
         </div>
     )
