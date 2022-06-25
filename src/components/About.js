@@ -7,7 +7,7 @@ function About() {
     return (
         <div className='h-screen w-screen flex justify-center items-center font-mono text-left'>
             <div className='flex w-9/12 items-center justify-around'>
-                <div className='w-5/12'>
+                {/* <div className='w-5/12'>
                     <h1 className='text-5xl font-title py-6 tracking-tight align-top'>Skills</h1>
                     Programming Languages
                     Experienced with multiple programming languages such as:
@@ -19,10 +19,10 @@ function About() {
 
                     Data Manipulation and Visualisation
                     SQL/MySQL, Tableau
-                </div>
+                </div> */}
                 <div className='w-5/12'>
                     <h1 className='text-5xl font-title py-6 tracking-tight align-top'>About me</h1>
-                    I'm a Software Engineering undegraduate based in Malaysia. Currently in my fourth year. Looking for opportunities to 
+                    I'm a Final Year Software Engineering undergraduate at Monash University Malaysia who is enjoying all things related to programming. I mainly love working on web development because there is where creativity can shine ✨ You can check out some of my skills by hovering over the icons beside! 
                 </div>
             </div>
         </div>

@@ -118,8 +118,8 @@ function App() {
           <HomeAnimation />
           <Home />
           {/* <SkillsAnimation /> */}
-          {/* <About /> */}
-          <Skills />
+          <About />
+          {/* <Skills /> */}
           {/* <Projects /> */}
           <Footer />
         </div>
