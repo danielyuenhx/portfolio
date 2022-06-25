@@ -53,28 +53,25 @@ function About() {
                     steps={['Software Engineer', 2000, 'Web Developer', 2000, 'Student', 2000, '', 2000]} 
                 /> */}
                 {/* <p className='font-mono'>Based in Malaysia</p> */}
-                <div className='inline-block'>
-                    <a href="https://github.com/danielyuenhx" target="_blank">
-                        <img className='w-10 h-10 my-4 mr-4 hover:animate-shake' src={github} />
-                    </a>
-                </div>
-                {/* <div className='inline-block'>
-                    <a href="https://www.linkedin.com/in/danielyuenhx" target="_blank">
-                        <img className='w-10 h-10 my-4 hover:animate-shake' src={linkedin} />
-                    </a>
-                </div> */}
                 <motion.button
-                whileHover={{
-                    scale: 1.2,
-                    transition: { duration: 1 },
-                }}
-                whileTap={{ scale: 0.9 }}
+                    whileHover={{ scale: 1.3, }}
+                    transition={{ type: 'spring', stiffness: 350, originX: 0 }}
                 >
-                <div className='inline-block'>
-                    <a href="https://www.linkedin.com/in/danielyuenhx" target="_blank">
-                        <img className='w-10 h-10 my-4' src={linkedin} />
-                    </a>
-                </div>
+                    <div className='inline-block'>
+                        <a href="https://github.com/danielyuenhx" target="_blank">
+                            <img className='w-10 h-10 my-4 mr-4' src={github} />
+                        </a>
+                    </div>
+                </motion.button>
+                <motion.button
+                    whileHover={{ scale: 1.3, }}
+                    transition={{ type: 'spring', stiffness: 350, originX: 0 }}
+                >
+                    <div className='inline-block'>
+                        <a href="https://www.linkedin.com/in/danielyuenhx" target="_blank">
+                            <img className='w-10 h-10 my-4' src={linkedin} />
+                        </a>
+                    </div>
                 </motion.button>
             </div>
         </div>
