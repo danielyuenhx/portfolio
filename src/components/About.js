@@ -5,6 +5,7 @@ import { Programming, WebDev, Data } from './icons/Icons'
 
 function About() {
     const [expanded, setExpanded] = useState();
+    const text = " test"
 
     return (
         <div className='select-none w-screen h-screen flex items-center justify-center bg-slate-50'>
@@ -14,9 +15,9 @@ function About() {
                     I'm a Final Year Software Engineering undergraduate at Monash University Malaysia who is enjoying all things related to programming. I mainly love working on web development because there is where creativity can shine ✨ You can check out some of my skills by hovering over the cards on the right! 
                 </div>
                 <div className='w-5/12 h-full flex justify-center'>
-                    <SkillsCard icon={ <Programming size={9} title={ "test "} /> }/>
-                    <SkillsCard icon={ <WebDev size={9} /> }/>
-                    <SkillsCard icon={ <Data size={9} /> }/>
+                    <SkillsCard icon={ <Programming size={7} /> } title="Programming Languages"/>
+                    <SkillsCard icon={ <WebDev size={7} /> } title="Web Development"/>
+                    <SkillsCard icon={ <Data size={7} /> } title="Data Analytics and Visualisation"/>
                 </div>
             </div>
                 {/* <div className='w-5/12 flex'>
