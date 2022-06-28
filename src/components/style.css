@@ -150,10 +150,12 @@
 
 /* skills card text rotate */
 .skills-card:hover .skills-title {
-    /* transform:rotate(0deg);
-    white-space: normal; */
     margin-left: 1px;
     font-size: 0.75rem;
+}
+
+.skills-card:hover .icon-div {
+    width: 23px;
 }
 
 .skills-card:hover .skills-text {
