@@ -14,10 +14,18 @@ function About() {
                     <h1 className='text-5xl font-title pb-6 tracking-tight align-top font-semibold'>About me</h1>
                     I'm a Final Year Software Engineering undergraduate at Monash University Malaysia who is enjoying all things related to programming. I mainly love working on web development because there is where creativity can shine ✨ You can check out some of my skills by hovering over the cards on the right! 
                 </div>
-                <div className='w-5/12 h-full flex justify-center'>
-                    <SkillsCard icon={ <Programming size={7} /> } title="Programming Languages"/>
-                    <SkillsCard icon={ <WebDev size={7} /> } title="Web Development"/>
-                    <SkillsCard icon={ <Data size={7} /> } title="Data Analytics and Visualisation"/>
+                <div className='w-5/12 h-full flex justify-start items-center'>
+                    <SkillsCard 
+                        icon={ <Programming size={7} /> } 
+                        title="Programming Languages" 
+                        text1="Experienced in multiple programming languages such as:" 
+                        text2="Python, Java, JavaScript, C, SQL"/>
+                    <SkillsCard 
+                        icon={ <WebDev size={7} /> } 
+                        title="Web Development"
+                        text1="Skilled in web development using tools such as:"
+                        text2="HTML/Javascript/CSS, React, PHP, TailwindCSS, Bootstrap, Python Flask"/>
+                    <SkillsCard icon={ <Data size={7} /> } title="Data Analytics & Visualisation"/>
                 </div>
             </div>
                 {/* <div className='w-5/12 flex'>

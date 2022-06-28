@@ -147,3 +147,15 @@
   -webkit-text-stroke: 1px black;
   -webkit-text-fill-color: white;
 }
+
+/* skills card text rotate */
+.skills-card:hover .skills-title {
+    /* transform:rotate(0deg);
+    white-space: normal; */
+    margin-left: 1px;
+    font-size: 0.75rem;
+}
+
+.skills-card:hover .skills-text {
+    opacity: 100%;
+}
